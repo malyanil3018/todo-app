@@ -1,0 +1,87 @@
+:root {
+  --bg: #f3f5f9;
+  --card: #ffffff;
+  --text: #1d2433;
+  --muted: #7a8396;
+  --accent: #2f5bea;
+  --danger: #d6455d;
+  --line: #e4e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 6px 24px rgba(30, 40, 70, 0.08);
+  align-self: flex-start;
+}
+
+h1 { margin: 0 0 20px; font-size: 1.6rem; }
+
+#task-form { display: flex; gap: 8px; }
+
+#task-input {
+  flex: 1;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+}
+
+#task-form button {
+  background: var(--accent);
+  color: #fff;
+  padding: 0 16px;
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+#counter { color: var(--muted); font-size: 0.9rem; margin: 16px 0 8px; }
+
+#task-list { list-style: none; margin: 0; padding: 0; }
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.task input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+
+.task span { flex: 1; word-break: break-word; }
+
+/* Completed tasks get a strike-through */
+.task.completed span { text-decoration: line-through; color: var(--muted); }
+
+.delete-btn {
+  background: transparent;
+  color: var(--danger);
+  padding: 6px 10px;
+}
+.delete-btn:hover { background: #fdecef; }
+
+#empty-message { color: var(--muted); text-align: center; margin: 24px 0 4px; }
